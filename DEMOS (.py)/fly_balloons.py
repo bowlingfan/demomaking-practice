@@ -15,12 +15,12 @@ class Vars:
         self.w_rate=10
         self.colors=[n for n in range(11)]
         self.rad={
-        "min":8,
-        "max":15,
+            "min":8,
+            "max":15,
         }
         self.len={
-        "min":15,
-        "max":45,
+            "min":15,
+            "max":45,
         }
     
 t=0
@@ -47,14 +47,14 @@ class Balloon:
     def make_string(self):
         y=int(self.y)
         c=t%100//25
-    if c==0:
-        for l in range(self.len):
-            pix(self.x+int(math.sin(l//3)*2),y+1+self.r+l,12)
-    if c==1 or c==3:
-        line(self.x,self.y+1+self.r,self.x,y+self.len+1+self.r,12)
-    if c==2:
-        for l in range(self.len):
-            pix(self.x+int(math.sin(-l//3)*2),y+1+self.r+l,12)
+        if c==0:
+            for l in range(self.len):
+                pix(self.x+int(math.sin(l//3)*2),y+1+self.r+l,12)
+        if c==1 or c==3:
+            line(self.x,self.y+1+self.r,self.x,y+self.len+1+self.r,12)
+        if c==2:
+            for l in range(self.len):
+                pix(self.x+int(math.sin(-l//3)*2),y+1+self.r+l,12)
 class Wind:
     def __init__(self):
         self.x=random.randint(0,240)
